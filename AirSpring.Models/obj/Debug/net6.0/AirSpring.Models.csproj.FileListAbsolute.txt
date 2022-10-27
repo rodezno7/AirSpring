@@ -1,0 +1,12 @@
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\bin\Debug\net6.0\AirSpring.Models.deps.json
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\bin\Debug\net6.0\AirSpring.Models.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\bin\Debug\net6.0\AirSpring.Models.pdb
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\AirSpring.Models.csproj.AssemblyReference.cache
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\AirSpring.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\AirSpring.Models.AssemblyInfoInputs.cache
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\AirSpring.Models.AssemblyInfo.cs
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\AirSpring.Models.csproj.CoreCompileInputs.cache
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\AirSpring.Models.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\refint\AirSpring.Models.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\AirSpring.Models.pdb
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.Models\obj\Debug\net6.0\ref\AirSpring.Models.dll

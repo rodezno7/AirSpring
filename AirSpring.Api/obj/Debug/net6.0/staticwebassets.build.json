@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "20JxHqDx6sa56pT1qhoMUgvdsKI4bcGjH8ZOvTbUKVE=",
+  "Source": "AirSpring.Api",
+  "BasePath": "_content/AirSpring.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

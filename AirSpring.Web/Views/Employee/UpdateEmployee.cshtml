@@ -1,0 +1,128 @@
+﻿@model AirSpring.Models.DTO.EmployeeDTO
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "New Employee";
+    var idUser = Convert.ToInt64(HttpContextAccessor.HttpContext.Session.GetString("IdUser"));
+}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://github.com/olythy/jquery.formatphonenumber.js"></script>
+<script src="~/js/site.js"></script>
+
+<div class="card">
+    <div class="card-header">
+        Update Employee Information
+    </div>
+    <div class="card-body">
+        <form id="frmUpdateEmployee" method="post" enctype="multipart/form-data" asp-controller="Employee" asp-action="UpdateEmployee">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="hidden" id="EmployeeId" name="EmployeeId" value="@Model.EmployeeId" />
+                        <label for="">First Name</label>
+                        <input type="text" class="form-control" id="EmployeeFirstName" name="EmployeeFirstName" value="@Model.EmployeeFirstName"></input>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="">Last Name</label>
+                        <input type="text" class="form-control" id="EmployeeLastName" name="EmployeeLastName" value="@Model.EmployeeLastName"></input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="">Phone Number</label>
+                        <input type="text" class="form-control" id="EmployeePhone" name="EmployeePhone" value="@Model.EmployeePhone"></input>
+                        <c1-input-mask title="Mask: (999) 000-0000" id="EmployeePhone" name="EmployeePhone"></c1-input-mask>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="">Zip Code</label>
+                        <input type="text" class="form-control" id="EmployeeZip" name="EmployeeZip" value="@Model.EmployeeZip"></input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="">Hire Date</label>
+                        <input type="text" class="form-control" id="HireDate" name="HireDate" value="@Model.HireDate"></input>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <button type="button" class="btn btn-primary" onclick="fnUpdateEmployee()">Save</button>
+            <a href="@Url.Action("AllEmployees","Employee")" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+
+<script>
+
+    $(function () {
+        $("#HireDate").datepicker();
+        $("#EmployeePhone").formatPhoneNumber({ format: '(###) ###-####' });
+    });
+
+    $("#frmUpdateEmployee").validate({
+        rules: {
+            EmployeeFirstName: {
+                required: true,
+            },
+            EmployeeLastName: {
+                required: true,
+            },
+        },
+        errorClass: "errorFormValidates",
+        messages: {
+            EmployeeFirstName: {
+                required: "Required Field"
+            }
+        }
+    });
+
+    function fnUpdateEmployee() {
+        var url = $("#frmUpdateEmployee").attr("action");
+        var formData = {
+            EmployeeId: $("#EmployeeId").val(),
+            EmployeeFirstName: $("#EmployeeFirstName").val(),
+            EmployeeLastName: $("#EmployeeLastName").val(),
+            EmployeePhone: $("#EmployeePhone").val(),
+            EmployeeZip: $("#EmployeeZip").val(),
+            HireDate: $("#HireDate").val(),
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: formData,
+            datatype: "json",
+        }).done(function (data) {
+            if (data == undefined || data == null || data == 0) {
+
+                Swal.fire({
+                    positio: 'center',
+                    icon: 'error',
+                    title: '¡Oups! There is an error trying to save the new employee',
+                    showConfirmButton: false,
+                });
+
+            } else if (data > 0) {
+
+                Swal.fire({
+                    positio: 'center',
+                    icon: 'success',
+                    title: '¡Employee Updated!',
+                    showConfirmButton: false,
+                    timer: 2500
+                });
+
+                window.location.replace("/Employee/AllEmployees");
+            }
+        });
+    }
+
+</script>

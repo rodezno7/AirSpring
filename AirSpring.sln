@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirSpring.Api", "AirSpring.Api\AirSpring.Api.csproj", "{30A00B8D-885E-4B31-A339-D98A53D537BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirSpring.Web", "AirSpring.Web\AirSpring.Web.csproj", "{4292C5BA-69F1-41A5-8554-78236471FDCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirSpring.DAL", "AirSpring.DAL\AirSpring.DAL.csproj", "{DBA201E6-C418-4980-A298-564F361DD4F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirSpring.Models", "AirSpring.Models\AirSpring.Models.csproj", "{EDF5A824-28E7-44BE-A525-B6180C485FBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30A00B8D-885E-4B31-A339-D98A53D537BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A00B8D-885E-4B31-A339-D98A53D537BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A00B8D-885E-4B31-A339-D98A53D537BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A00B8D-885E-4B31-A339-D98A53D537BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4292C5BA-69F1-41A5-8554-78236471FDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4292C5BA-69F1-41A5-8554-78236471FDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4292C5BA-69F1-41A5-8554-78236471FDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4292C5BA-69F1-41A5-8554-78236471FDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA201E6-C418-4980-A298-564F361DD4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA201E6-C418-4980-A298-564F361DD4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA201E6-C418-4980-A298-564F361DD4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA201E6-C418-4980-A298-564F361DD4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF5A824-28E7-44BE-A525-B6180C485FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF5A824-28E7-44BE-A525-B6180C485FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF5A824-28E7-44BE-A525-B6180C485FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF5A824-28E7-44BE-A525-B6180C485FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C6B1AA6-986F-4DFB-96FC-07342FFC5695}
+	EndGlobalSection
+EndGlobal

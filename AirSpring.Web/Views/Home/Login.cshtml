@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="card">
+    <div class="card-header">
+        Login Air Spring
+    </div>
+    <div class="card-body">
+        <form id="frmLogin" method="post" enctype="multipart/form-data" asp-controller="User" asp-action="Login">
+            <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" class="form-control" id="Username" name="Username" aria-describedby="" placeholder="Username" autocomplete="off">
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class="form-control" id="Password" name="Password" placeholder="Password" autocomplete="off">
+            </div>
+            <br />
+            <button type="button" class="btn btn-primary" onclick="fnLogin()">LogIn</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+
+
+<script>
+
+    $("#frmLogin").validate({
+        rules: {
+            Username: {
+                required: true,
+            },
+            Password: {
+                required: true,
+            }
+        },
+        errorClass: "errorFormValidates",
+        messages: {
+            Username: {
+                required: "Required field",
+            },
+            Password: {
+                required: "Required field"
+            }
+        }
+    });
+
+    function fnLogin() {
+            var url = $("#frmLogin").attr("action");
+            var formData = {
+                Username: $("#Username").val(),
+                Password: $("#Password").val(),
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                datatype: "json",
+            }).done(function (data) {
+                if (data == undefined || data == null || data == 0) {
+                    // Show error Message
+                    Swal.fire({
+                        positio: 'center',
+                        icon: 'error',
+                        title: 'User and Password Incorrect',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                    $("#Username").val('');
+                    $("#Password").val('');
+
+
+                } else if (data > 0) { // Redirect
+                    window.location.replace("/Home/Index");
+                }
+            });
+    }
+
+</script>

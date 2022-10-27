@@ -1,0 +1,136 @@
+﻿@model List<AirSpring.Models.DTO.EmployeeDTO>
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var idUser = Convert.ToInt64(HttpContextAccessor.HttpContext.Session.GetString("IdUser"));
+}
+
+@if (Model != null)
+{
+    <h1>Employees</h1>
+    <br />
+    foreach (var item in Model)
+    {
+        <div class="col-sm-12 col-md-12 col-lg-12 mb-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <strong>Employee ID</strong>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <strong>First Name</strong>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <strong>Last Name</strong>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <strong>Phone Number</strong>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <strong>Zip Code</strong>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <strong>Hire Date</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <p class="card-text">@item.EmployeeId</p>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <p class="card-text">@item.EmployeeFirstName</p>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <p class="card-text">@item.EmployeeLastName</p>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <p class="card-text">@item.EmployeePhone</p>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <p class="card-text">@item.EmployeeZip</p>
+                        </div>
+                        <div class="col-sm-2 col-md-4 col-lg-2 text-center mb-2">
+                            <p class="card-text">@item.HireDate</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-md-6 col-lg-6 align-content-start mb-1">
+                            <a href="@Url.Action("UpdateEmployee","Employee", new { id = item.EmployeeId})" class="btn btn-success">Edit</a>
+                            <a onclick="fnDeleteEmployee(@item.EmployeeId)" id="btnDelete" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="text-center">
+            Sin resultados
+        </div>
+    </div>
+}
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+
+<script>
+    function fnDeleteEmployee(id) {
+
+        Swal.fire({
+            title: 'Are you sure you want to delete the employee??',
+            text: "You can't reverse this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                var url = "DeleteEmployee";
+                var formData = {
+                    employeeId: id
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: formData,
+                    datatype: "json",
+                }).done(function (data) {
+                    if (data == undefined || data == null || data == 0) {
+
+                        Swal.fire({
+                            positio: 'center',
+                            icon: 'error',
+                            title: "An error occurred.. We couldn't remove it!",
+                            showConfirmButton: false,
+                        });
+
+                    } else if (data > 0) {
+
+                        if (result.isConfirmed) {
+
+                            Swal.fire({
+                                positio: 'center',
+                                icon: 'success',
+                                title: 'Employee removed!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                        window.location.replace("/Employee/AllEmployees");
+                    }
+                });
+
+
+            }
+        })
+
+
+    }
+</script>

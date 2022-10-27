@@ -1,0 +1,17 @@
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\bin\Debug\net6.0\AirSpring.DAL.deps.json
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\bin\Debug\net6.0\AirSpring.DAL.runtimeconfig.json
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\bin\Debug\net6.0\AirSpring.DAL.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\bin\Debug\net6.0\AirSpring.DAL.pdb
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.csproj.AssemblyReference.cache
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.AssemblyInfoInputs.cache
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.AssemblyInfo.cs
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\refint\AirSpring.DAL.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.pdb
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.genruntimeconfig.cache
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\ref\AirSpring.DAL.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\bin\Debug\net6.0\AirSpring.Models.dll
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\bin\Debug\net6.0\AirSpring.Models.pdb
+C:\Users\Bayron Rodezno\source\repos\AirSpring\AirSpring.DAL\obj\Debug\net6.0\AirSpring.DAL.csproj.CopyComplete
